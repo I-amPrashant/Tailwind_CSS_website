@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" integrity="sha256-BicZsQAhkGHIoR//IB2amPN5SrRb3fHB8tFsnqRAwnk=" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/raleway-5" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="w-full h-auto ">
+    <!-- sticky header  -->
+    <header class="px-6 flex justify-between items-center w-full relative z-10 bg-[#ffffff] lg:p-3 lg:bg-[#222222] lg:fixed lg:z-50"> 
+
+        <div id="sidebar" class="fixed bg-[#222222] flex flex-col left-0 top-0 w-[300px] h-[100vh] z-20 text-[rgba(255,255,255,0.4)]  -translate-x-[300px] duration-500 overflow-auto lg:duration-75 lg:relative lg:w-full lg:h-[100px] lg:flex-row  lg:text-[15px] lg:text-[#ffffff]">
+            <div id="logo-wrapper-1" class="cursor-pointer px-7 border-b-[1px] border-gray-500 border-opacity-20 py-9  lg:absolute lg:left-[50%] lg:top-[50%] lg:-translate-y-[50%] lg:-translate-x-[50%] lg:p-0 lg:border-none">
+                <img src="icon and img/mobile-logo-2.png" class="h-[58px] w-full lg:h-[60px] lg:w-[210px]">
+            </div>
+            <div id="right-menu" class="font-light relative lg:w-1/2">
+                <ul class="list-none flex flex-col lg:flex-row lg:w-full lg:h-full lg:justify-end lg:items-center lg:pr-[200px]">
+                    <li class="cursor-pointer px-7 lg:px-4 lg:uppercase lg:py-0 lg:border-none lg:h-full py-[15px] border-b-[1px] border-gray-500 border-opacity-20 lg:flex lg:flex-col lg:items-center lg:justify-center  "><a href="#about-section">About</a></li>
+                    <li class="cursor-pointer px-7 lg:px-4 lg:uppercase lg:py-0 lg:border-none lg:h-full py-[15px] border-b-[1px] border-gray-500 border-opacity-20 lg:flex lg:flex-col lg:items-center lg:justify-center "><a href="#model-section">Models</a></li>
+                    <li class="cursor-pointer px-7 lg:px-4 lg:uppercase lg:py-0 lg:border-none lg:h-full py-[15px] border-b-[1px] border-gray-500 border-opacity-20 lg:flex lg:flex-col lg:items-center lg:justify-center"><a href="#portfolio-section">Portfolio</a></li>
+                </ul>
+            </div>
+            <div id="left-menu" class="font-light relative lg:w-1/2">
+                <ul class="list-none flex flex-col lg:flex-row lg:w-full lg:h-full lg:justify-start lg:items-center lg:pl-[200px]">
+                    <li class="cursor-pointer px-7 lg:px-4 lg:uppercase lg:py-0 lg:border-none lg:h-full py-[15px] border-b-[1px] border-gray-500 border-opacity-20 lg:flex lg:flex-col lg:items-center lg:justify-center"><a href="#event-section">Events</a></li>
+                    <li class="cursor-pointer px-7 lg:px-4 lg:uppercase lg:py-0 lg:border-none lg:h-full py-[15px] border-b-[1px] border-gray-500 border-opacity-20 lg:flex lg:flex-col lg:items-center lg:justify-center"><a href="#trending-section">Trending</a></li>
+                    <li class="cursor-pointer px-7 lg:px-4 lg:uppercase lg:py-0 lg:border-none lg:h-full py-[15px] border-b-[1px] border-gray-500 border-opacity-20 lg:flex lg:flex-col lg:items-center lg:justify-center"><a href="#contact-section">Contacts</a></li>
+                </ul>
+            </div>
+            <div id="bottom-search" class="relative mx-5 top-7 p-3 bg-[#252525] rounded-md lg:hidden">
+                <input type="text" class=" w-full border-none outline-none bg-transparent text-[#565656]">
+                <span class="cursor-pointer absolute h-full p-2 right-0 top-0 flex items-center justify-center">
+                    <img src="icon and img/search2.png" class="h-5 w-5 opacity-70">
+                </span>
+            </div>
+        </div>
+
+        <div id="logo-wrapper-2" class="cursor-pointer lg:hidden">
+            <img src="icon and img/mobile-logo.png" class="h-auto w-[200px]">
+        </div>
+        <div id="hamburger-menu" class="flex gap-12 px-2 sm:px-8 lg:hidden">
+            <span class="cursor-pointer" onclick="sidebarSlide()" id="hamburger"> 
+                <img src="icon and img/hamburger.png" class="h-5 w-5">
+            </span>
+            <span class="cursor-pointer hidden sm:inline-block">
+                <img src="icon and img/search.png" class="h-5 w-5">
+            </span>
+        </div>
+
+    </header>
+    <!-- sticky header end -->
+
+    <!-- slider start  -->
+    <div id="slider-wrapper" class="relative h-[550px] sm:h-[650px] w-full lg:mt-[124px]">
+
+        <div class="slideShows h-full w-full relative fade">
+            <div id="left-bar" class="absolute left-0 top-0  md:justify-center md:items-center h-full max-w-[80px] bg-white hidden md:flex">
+                <span class="text-gray-700 -rotate-90 whitespace-nowrap leading-3 tracking-wider text-xl relative">+1 202 555-0128</span>
+            </div>
+            <div id="mid-section" class="h-full w-full  relative text-white px-4 sm:px-20 md:px-36">
+                <div class="sm:max-w-[80%] md:max-w-[400px] py-20 h-full">
+                        <h2 class="uppercase text-[4.5vw] sm:text-2xl md:text-2xl my-6 tracking-wider ">New level of your career</h2>
+                        <h1 class="text-[13vw] sm:text-[75px] md:text-[85px] font-medium ">Start your way here</h1>
+                     <a href="#event-section">
+                        <button class="cursor-pointer relative hover:bg-red-500  bg-[#222222] h-[68px] w-[260px] font-semibold text-white duration-300 my-5">Become a model</button>
+                     </a>
+                    </div>
+                    <img src="new images/jessika-arraes-c7SGN_jfJ0I-unsplash-min.webp" class="object-cover h-full w-full absolute left-0 top-0 -z-20">
+            </div>
+            <div id="right-bar" class="absolute right-0 top-0 hidden  md:justify-center md:items-center h-full max-w-[80px] bg-[#222222] md:flex px-10">
+                
+                <ul class="flex  list-none text-lg text-white rotate-90 gap-5">
+                <li class=" hover:text-blue-600 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li class=" hover:text-blue-400 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class=" hover:text-orange-500 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class=" hover:text-purple-500 duration-500 -rotate-90"><a href="#"><i class="fa-solid fa-basketball"></i></a></li>
+           
+                </ul>
+        
+            </div>
+        </div>
+        <div class="slideShows h-full w-full relative fade">
+            <div id="left-bar" class="absolute left-0 top-0  md:justify-center md:items-center h-full max-w-[80px] bg-white hidden md:flex">
+                <span class="text-gray-700 -rotate-90 whitespace-nowrap leading-3 tracking-wider text-xl relative">+1 202 555-0128</span>
+            </div>
+            <div id="mid-section" class="h-full w-full  relative text-white px-4 sm:px-20 md:px-36">
+                <div class="sm:max-w-[80%] md:max-w-[400px] py-20 h-full">
+                        <h2 class="uppercase text-[4.5vw] sm:text-2xl md:text-2xl my-6 tracking-wider ">only world catwalks</h2>
+                        <h1 class="text-[13vw] sm:text-[75px] md:text-[85px] font-medium ">Top Model Are Here</h1>
+               <a href="#event-section">
+                <button class="cursor-pointer relative hover:bg-red-500  bg-[#222222] h-[68px] w-[260px] font-semibold text-white duration-300 my-5">Become a model</button>
+               </a>
+                    </div>
+                    <img src="new images/katie-azi-LpmVODjAoYs-unsplash-min.webp" class="object-cover h-full w-full absolute left-0 top-0 -z-20">
+            </div>
+            <div id="right-bar" class="absolute right-0 top-0 hidden  md:justify-center md:items-center h-full max-w-[80px] bg-[#222222] md:flex px-10">
+                
+                <ul class="flex  list-none text-lg text-white rotate-90 gap-5">
+                <li class=" hover:text-blue-600 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li class=" hover:text-blue-400 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class=" hover:text-orange-500 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class=" hover:text-purple-500 duration-500 -rotate-90"><a href="#"><i class="fa-solid fa-basketball"></i></a></li>
+           
+                </ul>
+        
+            </div>
+        </div>
+        <div class="slideShows h-full w-full relative fade">
+            <div id="left-bar" class="absolute left-0 top-0  md:justify-center md:items-center h-full max-w-[80px] bg-white hidden md:flex">
+                <span class="text-gray-700 -rotate-90 whitespace-nowrap leading-3 tracking-wider text-xl relative">+1 202 555-0128</span>
+            </div>
+            <div id="mid-section" class="h-full w-full  relative text-white px-4 sm:px-20 md:px-36">
+                <div class="sm:max-w-[80%] md:max-w-[400px] py-20 h-full">
+                        <h2 class="uppercase text-[4.5vw] sm:text-2xl md:text-2xl my-6 tracking-wider ">top model agency</h2>
+                        <h1 class="text-[13vw] sm:text-[75px] md:text-[85px] font-medium ">Dream Is Coming</h1>
+               <a href="#event-section">
+                <button class="cursor-pointer relative hover:bg-red-500  bg-[#222222] h-[68px] w-[260px] font-semibold text-white duration-300 my-5">Become a model</button>
+               </a>
+                    </div>
+                    <img src="new images/sheldon-fD0BfmKoQKk-unsplash-min.webp" class="object-cover h-full w-full absolute left-0 top-0 -z-20">
+            </div>
+            <div id="right-bar" class="absolute right-0 top-0 hidden  md:justify-center md:items-center h-full max-w-[80px] bg-[#222222] md:flex px-10">
+                
+                <ul class="flex  list-none text-lg text-white rotate-90 gap-5">
+                <li class=" hover:text-blue-600 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li class=" hover:text-blue-400 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li class=" hover:text-orange-500 duration-500 -rotate-90"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class=" hover:text-purple-500 duration-500 -rotate-90"><a href="#"><i class="fa-solid fa-basketball"></i></a></li>
+           
+                </ul>
+        
+            </div>
+        </div>
+     
+
+
+        <!-- bottom slideshow indicator start  -->
+        <div class="absolute bottom-0 left-0 h-[72px] bg-white w-[600px] hidden md:block">
+            <div class=" w-full flex justify-between items-center px-4">
+            <button id="video-icon" class="p-2 bg-[#222222] text-white rounded-full h-[70px] w-[70px] hover:bg-red-500 duration-300 text-3xl leading-none">
+                <i class="fa-solid fa-caret-right"></i>
+            </button>
+            <span class="text-xs text-gray-700 tracking-wider relative" id="video-span">enjoy our presentation video</span>
+         <div class="flex justify-evenly items-center pr-5">
+            <span id="slide-left-counter" class="cursor-pointer text-2xl font-normal text-gray-600"><i class="bi bi-arrow-left" onclick="showSlidesMinus()"></i></span>
+            <h1 class="flex gap-1 items-center"><span id="current-index" class="text-4xl font-medium text-black pl-6 relative -top-1"> 1</span> / <span id="total-index" class="text-gray-600 text-sm pr-6"> </span> </h1>
+            <span id="slide-right-counter" class="cursor-pointer text-2xl font-normal text-gray-600"><i class="bi bi-arrow-right" onclick="showSlidesPlus()"></i></span>
+         </div>
+        </div>
+        </div>      
+        <!-- bottom slideshow indicator end  -->
+
+    </div>
+    <!-- slider end  -->
+
+    <!-- spacer div -->
+    <div class="mt-[100px] text-white px-5">w3ewer</div>
+    <!-- spacer div -->
+
+    <section id="about-section">
+        <!-- about section start  -->
+    <div class="lg:grid lg:grid-cols-2 h-fit px-5 lg:px-6 max-w-full  relative py-[100px] xl:mx-[100px] xl:px-8">
+        <div class="lg:col-span-1">
+            <h2 class="uppercase tracking-widest text-gray-600 text-xl font-normal">about agency</h2>
+            <h1 class="tracking-wider text-[32px] md:text-6xl leading-tight mt-4 font-normal"><span class="font-bold">Unimaginable space</span> of new opportunities and quick career growth for you </h1>
+            <p class=" tracking-widest [word-spacing:4px] mt-12 leading-relaxed"><span class="p-[2px] pl-0 text-red-500 text-4xl ">M</span> odel agency dolor sit amet consectetur adipisicing elit. Saepe ad exercitationem, doloremque atque a tenetur est voluptas dolores quod consequuntur doloribus quae nulla commodi voluptate laudantium distinctio illum itaque animi!</p>
+
+            <p class=" tracking-widest [word-spacing:4px] mt-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique tempora repellendus iste quas labore optio, impedit dolores soluta atque ab cupiditate non ratione enim deserunt nesciunt quos quod facilis modi?</p>
+        </div>
+        <img src="new images/imad-786-68gvimxcNZM-unsplash.webp" class="hidden lg:block h-full w-full absolute inset-0 -z-10 object-cover">
+    </div>
+    <!-- about section end -->
+
+    <!-- spacer div -->
+    <div class="mt-[10px] lg:mt-[80px] text-white px-5">w3ewer</div>
+    <!-- spacer div -->
+
+    <!-- about section talako start  -->
+    <div class="relative">
+        <div class="px-5 lg:px-8 xl:mx-[100px] xl:px-8 flex gap-20 items-center">
+            <span class=" h-auto max-h-28 max-w-28 rounded-full relative overflow-hidden aspect-square"><img src="new images/kateryna-hliznitsova-B9KFg8CRoQY-unsplash-min.webp" class="h-full w-full object-cover"></span>
+            <h1 class="flex flex-col gap-1 ">
+                <span class=" relative before:h-[1px] before:w-[30px] before:bg-gray-400 before:absolute before:left-[-45px] before:top-1/2"><b>Martina Ventalia</b></span>
+                <span class="text-gray-400">Co-producer</span>
+            </h1>
+            <span><img src="icon and img/signature.png" class="h-16 w-16"></span>
+        </div>
+        <div class="mt-16 bg-[#222222] py-8 px-5 text-white lg:absolute lg:right-0 lg:-top-96 lg:h-fit lg:w-[41%] z-20 mr-0">
+            <p class="text-7xl text-gray-600"><i class="fa-solid fa-quote-left"></i></p>
+            <p class=" text-center sm:ml-[13%] tracking-widest text-2xl leading-relaxed"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </i></p>
+            <p class=" text-center sm:ml-[65%] mt-12 text-sm">New-York Fashion Magazine, June 10</p>
+        </div>
+    </div>
+    <!-- about section talako end  -->
+    </section>
+
+      <!-- spacer div -->
+      <div class="mt-[150px]  text-white px-5">w3ewer</div>
+      <!-- spacer div -->
+
+      <!-- model section start -->
+     <section id="model-section"> 
+        <!-- header part start  -->
+        <div class=" px-5 lg:px-6 relative xl:mx-[100px] xl:px-8">
+            <h2 class="top-header  text-lg md:text-xl">categories</h2>
+            <h1 class="next-header text-3xl md:text-5xl mt-4"><b>The Best Models</b></h1>
+            <p class="last-header text-3xl md:text-5xl">at your service</p>
+        </div>
+        <!-- header part end  -->
+
+        <!-- draggable slider wrapper start  -->
+        <div id="draggable-wrapper" class="my-16 w-full max-h-[980px] overflow-hidden relative">
+            <div id="draggable-slider-wrapper" class="w-full h-full select-none duration-300 ease-linear">
+                <div class="draggable-items px-3  duration-300 ease-in relative">
+                    <div class="image-wrapper relative">
+                        <img src="new images/katie-azi-LpmVODjAoYs-unsplash-min.webp" class="h-auto aspect-square w-full object-cover">
+                        <div id="overlay" class="hidden h-full w-full bg-black absolute inset-0 opacity-10 duration-[1s] ease-in-out">josh</div>
+                        <div id="ab-div" class="absolute z-10 bottom-[-100px] left-0 w-full duration-300 ease-in-out">
+                                <h1 id="content-header" class="font-medium text-3xl tracking-widest text-center">Men</h1>
+                <h2 id="header-description" class="tracking-widest uppercase  text-base text-center mt-3 relative">Masculine Beauty</h2>
+                        </div>
+                    </div>
+                    <div class="drag-item-content mt-6 ">
+                        <div class="relative max-h-200px overflow-hidden mt-10">
+                            <p class="leading-loose tracking-wider text-[#333333] text-center translate-y-[150px] duration-300 ease-in-out">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quo dolor ullam vero mollitia debitis rem eum est .</p>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="draggable-items px-3  duration-300 ease-in relative">
+                    <div class="image-wrapper relative">
+                        <img src="new images/dave-lsoogGC_5dg-unsplash-min.webp" class="h-auto aspect-square w-full object-cover">
+                        <div id="overlay" class="hidden h-full w-full bg-black absolute inset-0 opacity-10 duration-[1s] ease-in-out">josh</div>
+                        <div id="ab-div" class="absolute z-10 bottom-[-100px] left-0 w-full duration-300 ease-in-out">
+                                <h1 id="content-header" class="font-medium text-3xl tracking-widest text-center">Men</h1>
+                <h2 id="header-description" class="tracking-widest uppercase  text-base text-center mt-3 relative">Masculine Beauty</h2>
+                        </div>
+                    </div>
+                    <div class="drag-item-content mt-6 ">
+                        <div class="relative max-h-200px overflow-hidden mt-10">
+                            <p class="leading-loose tracking-wider text-[#333333] text-center translate-y-[150px] duration-300 ease-in-out">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quo dolor ullam vero mollitia debitis rem eum est .</p>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="draggable-items px-3  duration-300 ease-in relative">
+                    <div class="image-wrapper relative">
+                        <img src="new images/sheldon-fD0BfmKoQKk-unsplash-min.webp" class="h-auto aspect-square w-full object-cover">
+                        <div id="overlay" class="hidden h-full w-full bg-black absolute inset-0 opacity-10 duration-[1s] ease-in-out">josh</div>
+                        <div id="ab-div" class="absolute z-10 bottom-[-100px] left-0 w-full duration-300 ease-in-out">
+                                <h1 id="content-header" class="font-medium text-3xl tracking-widest text-center">Men</h1>
+                <h2 id="header-description" class="tracking-widest uppercase  text-base text-center mt-3 relative">Masculine Beauty</h2>
+                        </div>
+                    </div>
+                    <div class="drag-item-content mt-6 ">
+                        <div class="relative max-h-200px overflow-hidden mt-10">
+                            <p class="leading-loose tracking-wider text-[#333333] text-center translate-y-[150px] duration-300 ease-in-out">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quo dolor ullam vero mollitia debitis rem eum est .</p>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="draggable-items px-3  duration-300 ease-in relative">
+                    <div class="image-wrapper relative">
+                        <img src="new images/kateryna-hliznitsova-B9KFg8CRoQY-unsplash-min.webp" class="h-auto aspect-square w-full object-cover">
+                        <div id="overlay" class="hidden h-full w-full bg-black absolute inset-0 opacity-10 duration-[1s] ease-in-out">josh</div>
+                        <div id="ab-div" class="absolute z-10 bottom-[-100px] left-0 w-full duration-300 ease-in-out">
+                                <h1 id="content-header" class="font-medium text-3xl tracking-widest text-center">Men</h1>
+                <h2 id="header-description" class="tracking-widest uppercase  text-base text-center mt-3 relative">Masculine Beauty</h2>
+                        </div>
+                    </div>
+                    <div class="drag-item-content mt-6 ">
+                        <div class="relative max-h-200px overflow-hidden mt-10">
+                            <p class="leading-loose tracking-wider text-[#333333] text-center translate-y-[150px] duration-300 ease-in-out">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quo dolor ullam vero mollitia debitis rem eum est .</p>
+                        </div>
+                    </div>
+    
+                </div>  
+            </div>
+        </div>
+        <!-- draggable slider wrapper end  -->
+
+     </section>
+      <!-- model section end -->
+
+      <!-- spacer div -->
+      <div class="mt-[150px]  text-white px-5">w3ewer</div>
+      <!-- spacer div -->
+
+      <!-- Portfolio section start -->
+      <section id="portfolio-section" class="relative w-full duration-1000 ease-in-out">
+        <div class="h-full w-full bg-black absolute inset-0 opacity-80 z-0"></div>
+        
+        <!-- header part  -->
+        <div class="leading-6 text-[#d8d8d8] pl-5 z-20 pt-[110px] pb-[80px] relative">
+            <h2 class="uppercase  tracking-widest text-2xl py-4">out models</h2>
+            <h1 class="font-bold text-5xl">True beauty...</h1>
+            <h1 class="tracking-wider text-5xl">it is so impressive!</h1>
+        </div>
+
+        <div id="control-links" class="hidden md:block ml-[15%] relative z-20">
+            <ul class="list-none flex gap-5 font-medium text-[#d8d8d8]">
+                <li class="active hover:text-red-400 cursor-pointer  duration-500 ease-in-out uppercase text-[#d8d8d8] tracking-widest text-sm" name="all">all</li>
+                <li class=" hover:text-red-400 cursor-pointer  duration-500 ease-in-out uppercase text-[#d8d8d8] tracking-widest text-sm" name="podium"> podium</li>
+                <li class=" hover:text-red-400 cursor-pointer  duration-500 ease-in-out uppercase text-[#d8d8d8] tracking-widest text-sm" name="studio"> studio</li>
+                <li class=" hover:text-red-400 cursor-pointer  duration-500 ease-in-out uppercase text-[#d8d8d8] tracking-widest text-sm" name="nature"> nature</li>
+                <li class=" hover:text-red-400 cursor-pointer  duration-500 ease-in-out uppercase text-[#d8d8d8] tracking-widest text-sm" name="fashion"> fashion</li>
+              
+            </ul>
+        </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative ">
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full " name="podium">
+                <img src="new images/team-img-1-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full" name="podium">
+                <img src="new images/team-img-2-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full" name="studio">
+                <img src="new images/team-img-3-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full" name="nature">
+                <img src="new images/team-img-5-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full" name="studio">
+                <img src="new images/team-img-6-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full" name="fashion">
+                <img src="new images/team-img-7-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full" name="nature">
+                <img src="new images/team-img-8-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+               <div class="portfolio-images col-span-1 relative  h-[300px] w-full" name="nature">
+                <img src="new images/team-img-4-1.5x-480x480.jpg" class="h-full w-full object-cover absolute inset-0">
+               </div>
+             </div>
+        </div>
+      </section>
+      <!-- Portfolio section end -->
+
+         <!-- spacer div -->
+      <div class="mt-[150px]  text-white px-5">w3ewer</div>
+      <!-- spacer div -->
+
+
+      <!-- events section start  -->
+      <section id="event-section">
+        <!-- header  -->
+        <div class=" px-5  lg:px-6 relative xl:mx-[100px] xl:px-8">
+            <h2 class="top-header  text-lg md:text-xl">upcoming events</h2>
+            <h1 class="next-header text-3xl md:text-5xl mt-4"><b>Your chance</b></h1>
+            <p class="last-header text-3xl md:text-5xl">to make your dream come true</p>
+        </div>
+        <!-- header end  -->
+
+    <!-- spacer div -->
+    <div class="mt-[100px]  text-white px-5">w3ewer</div>
+    <!-- spacer div -->
+
+        <!-- open classes part start -->
+        <div class="relative w-full h-fit px-4 sm:px-0 md:px-9 lg:grid lg:grid-cols-2  lg:max-h-[750px]">
+
+            <!-- upper part  -->
+            <div class="relative w-full px-3 sm:px-0 py-10 h-fit md:py-0 lg:w-full lg:h-full">
+                <img src="new images/josh-hild-YColv2Gv-h4-unsplash-min.webp" class="absolute h-full w-full sm:max-h-[550px] md:max-h-[750px] md:w-[65%] opacity-50 sm:opacity-100 object-cover lg:w-[75%] right-0 top-0">
+                <div class="relative sm:p-7 sm:h-[75%] md:p-0 sm:w-[70%] sm:bg-white md:bg-transparent md:w-[55%] md:h-full lg:w-[80%] flex flex-col justify-center py-[130px]">
+                    <div class="relative sm:bg-white md:bg-transparent md:py-14 md:pl-12">
+                        <h3 class="uppercase tracking-widest text-sm text-gray-500 font-normal">free coaching</h3>
+                        <h1 class="font-bold text-[#333333] text-5xl tracking-wider word-spacing-[5px]">Open classes. LA</h1>
+                        <h2 class="font-normal text-2xl text-[#333333] tracking-wider">June 3, 2019</h2>
+                    </div>
+
+                   <div class="relative md:p-12 sm:bg-white mt-7">
+                    <p class=" leading-loose tracking-wider text-base ">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias architecto, eaque quo necessitatibus quibusdam corporis expedita atqu.thisi is just a training of me practising html,css javascript.
+                    </p>
+                    <button class=" uppercase text-xs font-bold tracking-wide pointer-events-none text-[#333333] mt-10"><a href="#">Read More</a></button>
+                   </div>
+                </div>
+            </div>
+
+            <!-- upper part end  -->
+
+            <!-- lower part start  -->
+            <div class="mt-16 w-full flex flex-col sm:px-6 md:px-0 gap-10 lg:w-full lg:m-0 lg:px-6">
+                <div class="news-items flex flex-col gap-8">
+                    <div class="news-image w-auto">
+                        <img src="new images/kateryna-hliznitsova-B9KFg8CRoQY-unsplash-min.webp" class="h-auto aspect-square max-w-[200px] lg:max-w-[150px] m-auto xl:max-w-[200px]">
+                    </div>
+                    <div class="text-[#333333]">
+                        <h3 class="uppercase tracking-widest font-normal text-opacity-60 text-base">free coaching</h3>
+                        <h1 class="font-semibold text-3xl mt-5">Movement on the podium</h1>
+                        <h1 class="font-medium text-3xl">June 3, 2019</h1>
+                        <button class="pointer-events-none font-bold text-sm mt-8 tracking-widest"> Read More</button>
+                    </div>
+
+                </div>
+                <div class="news-items flex flex-col gap-8">
+                    <div class="news-image w-auto" >
+                        <img src="new images/jessika-arraes-c7SGN_jfJ0I-unsplash-min.webp" class="h-auto aspect-square max-w-[200px] m-auto lg:max-w-[150px] xl:max-w-[200px]">
+                    </div>
+                    <div class="text-[#333333]">
+                        <h3 class="uppercase tracking-widest font-normal text-opacity-60 text-base">Casting for women</h3>
+                        <h1 class="font-semibold text-3xl mt-5">Models for a business event </h1>
+                        <h1 class="font-medium text-3xl">June 3, 2019</h1>
+                        <button class="pointer-events-none font-bold text-sm mt-8 tracking-widest"> Read More</button>
+                    </div>
+
+                </div>
+                <div class="news-items flex flex-col gap-8">
+                    <div class="news-image w-auto" >
+                        <img src="new images/imad-786-68gvimxcNZM-unsplash.webp" class="h-auto aspect-square max-w-[200px] m-auto lg:max-w-[150px] xl:max-w-[200px]">
+                    </div>
+                    <div class="text-[#333333]">
+                        <h3 class="uppercase tracking-widest font-normal text-opacity-60 text-base">free coaching</h3>
+                        <h1 class="font-semibold text-3xl mt-5">Movement on the podium</h1>
+                        <h1 class="font-medium text-3xl">June 3, 2019</h1>
+                        <button class="pointer-events-none font-bold text-sm mt-8 tracking-widest"> Read More</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- lower part end  -->
+
+        </div>
+        <!-- open classes part end -->
+
+            <!-- spacer div -->
+    <div class="mt-[100px] text-white px-5 "> w3ewer </div>
+    <!-- spacer div -->
+
+    <!-- new career and new life part start -->
+    <div class="relative">
+       <img src="new images/team-img-3-1.5x-480x480.jpg" class="h-[650px]  w-full relative object-cover grayscale">
+       <div class=" absolute xl:mx-[100px] top-[50%] -translate-y-[50%] px-6 text-white w-full">
+        <!-- <h2 class="top-header  text-lg md:text-xl">upcoming events</h2>
+        <h1 class="next-header text-3xl md:text-5xl mt-4"><b>Your chance</b></h1>
+        <p class="last-header text-3xl md:text-5xl">to make your dream come true</p> -->
+        <h2 class="uppercase tracking-[3px]  text-xl font-normal mb-[30px]">new career and new life</h2>
+        <h1 class="tracking-widest font-bold text-3xl sm:text-4xl lg:text-5xl">Next casting is your chance!</h1>
+        <h1 class="tracking-widest font-semibold sm:text-4xl text-3xl lg:text-5xl mt-3">Sign up for the newsletter</h1>
+
+        <div class="flex flex-col mt-24 sm:flex-row sm:gap-[5%] w-auto sm:max-w-[650px] relative" id="event-button">
+            <input type="email" class="p-[20px] outline-none border-[1px] border-black border-opacity-80 text-[#222222] bg-transparent sm:w-[75%]" placeholder="Enter Your Email">
+            <button class="w-full bg-[#222222] uppercase tracking-widest text-[11px] font-bold p-[30px] sm:w-[25%]">apply</button>
+        </div>
+    </div>
+    </div>
+    <!-- new career and new life part end -->
+
+      </section>
+      <!-- events section end  -->
+
+          <!-- spacer div -->
+          <div class="mt-[150px] text-white px-5">w3ewer</div>
+          <!-- spacer div -->
+
+          <!-- trending section start  -->
+          <section id="trending-section" class="relative w-full lg:px-6">
+             <!-- header  -->
+        <div class="px-5  lg:px-6 relative  xl:mx-[100px] xl:px-8">
+            <h2 class="top-header  text-lg md:text-xl">trending models</h2>
+            <h1 class="next-header text-3xl md:text-5xl mt-4"><b>The most attractive</b></h1>
+            <p class="last-header text-3xl md:text-5xl">to make your dream come true</p>
+        </div>
+        <!-- header end  -->
+
+           <!-- spacer div -->
+           <div class="mt-[50px]  text-white px-5">w3ewer</div>
+           <!-- spacer div -->
+
+       <img src="new images/rafaella-mendes-diniz-AoL-mVxprmk-unsplash (1).webp" class="w-full object-cover h-[600px] relative lg:h-[790px]">
+
+       <div class="bg-[#222222] relative w-full px-6 py-[120px] text-white m-auto md:w-[95%] md:top-[-200px] md:py-[80px] lg:absolute lg:top-[33%] lg:right-0 lg:px-8 lg:w-[45%]">
+            <h2 class="uppercase tracking-wider font-normal mb-[25px] text-sm">high fashion and delfa class</h2>
+            <h1 class="font-semibold text-5xl">Katelinn Sandell</h1>
+            <p class="text-base leading-7 tracking-wider mt-[15px]">Universal model of the highest level. Serious experience in international projects of any level of complexity. High performance and perseverance.
+            </p>
+
+            <div class="flex flex-col gap-[20px] pl-4 mt-[50px] relative" id="modal-info">
+                <div class="grid grid-cols-3">
+                    <div>
+                        <span><b>Age</b></span><br>
+                        <span>23</span>
+                </div>
+                    <div>
+                        <span><b>Height</b></span><br>
+                        <span>182</span>
+            </div>
+                    <div>
+                        <span><b>Weight</b></span><br>
+                        <span>52</span>
+                </div>   
+                </div>
+                <div class="grid grid-cols-3">
+                    <div>
+                        <span><b>Eyes</b></span><br>
+                        <span>Brown</span>
+                </div>
+                    <div>
+                        <span><b>Hair</b></span><br>
+                        <span>Blonde</span>
+            </div>
+                    <div>
+                        <span><b>Bust</b></span><br>
+                        <span>77</span>
+                </div>   
+                </div>
+                <div class="grid grid-cols-3">
+                    <div>
+                        <span><b>Waist</b></span><br>
+                        <span>54</span>
+                </div>
+                    <div>
+                        <span><b>Hips</b></span><br>
+                        <span>84</span>
+            </div>
+                    <div>
+                        <span><b>Shoe</b></span><br>
+                        <span>7.5</span>
+                </div>   
+                </div>
+            </div>
+            
+            <button class="cursor-pointer relative hover:bg-red-500  bg-[#333333] h-[68px] w-[260px] font-semibold text-white duration-300 mt-24 lg:mt-16">View Profile</button>
+
+       </div>   
+
+
+          </section>
+          <!-- trending section end  -->
+
+     <!-- spacer div -->
+          <div class="mt-[200px] text-white px-5 md:hidden lg:block">w3ewer</div>
+          <!-- spacer div -->
+
+          <section id="contact-section" class="relative">
+              <!-- header  -->
+        <div class="px-5  lg:px-6 relative  xl:mx-[100px] xl:px-8">
+            <h2 class="top-header  text-lg md:text-xl">our contacts</h2>
+            <h1 class="next-header text-3xl md:text-5xl mt-4"><b>We are in touch</b></h1>
+            <p class="last-header text-3xl md:text-5xl">and ready to cooperate</p>
+        </div>
+        <!-- header end  -->
+
+           <!-- spacer div -->
+           <div class="mt-[70px] text-white px-5">w3ewer</div>
+           <!-- spacer div -->
+
+           <div class="md:grid md:grid-cols-3 px-3">
+                    <div class="address-wrapper pl-8 mt-[50px] md:mt-0">
+                        <!-- header part  -->
+                        <div class="flex flex-col gap-4">
+                            <h3 class="uppercase font-light text-lg tracking-widest text-[#222222]">united states</h3>
+                            <h1 class="font-semibold text-4xl text-[#222222] tracking-widest text-opacity-80 tracking-wider">New-York</h1>
+                        </div>
+                        <!-- header part end  -->
+
+                        <div class="flex flex-col gap-6 mt-[50px]">
+                            <div class="flex gap-5 items-top">
+                                <span class="text-[#222222] text-sm leading-8"><i class="fa-solid fa-location-pin" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222] leading-8 mt-0">	Roosevelt Ave & 74th Street, Queens, NY 11372, New York, USA</p>
+                            </div>
+                            <div class="flex gap-5">
+                                <span class="text-[#222222] text-sm"><i class="fa-solid fa-mobile" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222]">	+1 202 555-0128</p>
+                            </div>
+                            <div class="flex gap-5">
+                                <span class="text-[#222222] text-sm"><i class="fa-solid fa-envelope" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222]"> info@gmail.co</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address-wrapper pl-8 mt-[50px] md:mt-0">
+                        <!-- header part  -->
+                        <div class="flex flex-col gap-4">
+                            <h3 class="uppercase font-light text-lg tracking-widest text-[#222222]">France</h3>
+                            <h1 class="font-semibold text-4xl text-[#222222] tracking-widest text-opacity-80 tracking-wider">Paris</h1>
+                        </div>
+                        <!-- header part end  -->
+
+                        <div class="flex flex-col gap-6 mt-[50px]">
+                            <div class="flex gap-5 items-top">
+                                <span class="text-[#222222] text-sm leading-8"><i class="fa-solid fa-location-pin" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222] leading-8 mt-0">33 Avenue du Maine, 75015 Paris, France</p>
+                            </div>
+                            <div class="flex gap-5">
+                                <span class="text-[#222222] text-sm"><i class="fa-solid fa-mobile" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222]">	+1 202 555-0128</p>
+                            </div>
+                            <div class="flex gap-5">
+                                <span class="text-[#222222] text-sm"><i class="fa-solid fa-envelope" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222]"> info@gmail.co</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="address-wrapper pl-8 mt-[50px] md:mt-0">
+                        <!-- header part  -->
+                        <div class="flex flex-col gap-4">
+                            <h3 class="uppercase font-light text-lg tracking-widest text-[#222222]">italy</h3>
+                            <h1 class="font-semibold text-4xl text-[#222222] tracking-widest text-opacity-80 tracking-wider">Milan</h1>
+                        </div>
+                        <!-- header part end  -->
+
+                        <div class="flex flex-col gap-6 mt-[50px]">
+                            <div class="flex gap-5 items-top">
+                                <span class="text-[#222222] text-sm leading-8"><i class="fa-solid fa-location-pin" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222] leading-8 mt-0">	Via Giorgio Pallavicino, 20145 Milan, Italy</p>
+                            </div>
+                            <div class="flex gap-5">
+                                <span class="text-[#222222] text-sm"><i class="fa-solid fa-mobile" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222]">	+1 202 555-0128</p>
+                            </div>
+                            <div class="flex gap-5">
+                                <span class="text-[#222222] text-sm"><i class="fa-solid fa-envelope" style="color: #222222;"></i></span>
+                                <p class="text-sm text-[#222222]"> info@gmail.co</p>
+                            </div>
+                        </div>
+                    </div>
+           </div>
+          </section>
+
+               <!-- spacer div -->
+               <div class="mt-[200px] text-white px-5">w3ewer</div>
+               <!-- spacer div -->
+
+               <footer class="bg-[#222222] text-white  lg:px-12">
+
+                 <!-- spacer div -->
+               <div class="py-[35px] text-[#222222] px-5 bg-[#222222]">w3ewer</div>
+               <!-- spacer div -->
+
+                <div class="flex flex-col lg:flex-row gap-6 justify-center items-center lg:justify-between">
+                    <h1 class="text-sm sm:text-lg">New-york / Paris / Milan</h1>
+                    <a href="#slider-wrapper">
+                        <img src="icon and img/mobile-logo-2.png" class="h-auto w-[200px] sm:w-[240px] md:w-[280px]lg:w-[350px]">
+                    </a>
+                    <div class="flex gap-12">
+                        <a href="https://www.facebook.com/profile.php?id=61550839139586"><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
+                        <a href="#"><i class="fa-solid fa-futbol" style="color: #ffffff;"></i></a>
+                    </div>
+                </div>
+
+                <div class="w-full m-auto py-8">
+                    <h1 class="text-center text-lg">© DynamicFrameworks – Elite ThemeForest Author.</h1>
+                </div>
+               </footer>
+
+               
+               <a href="#" class="to-top z-30">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+    
+<script src="script.js"></script>                                    
+   
+</body>
+</html>
